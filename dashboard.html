@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Analysis Dashboard</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7; /* Light gray background */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .dashboard-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* 2 columns */
+            grid-template-rows: repeat(2, 1fr);    /* 2 rows */
+            gap: 20px; /* Add some spacing between the cards */
+            max-width: 800px; /* Adjust the maximum width of the container */
+            margin: 0 auto; /* Center the container */
+        }
+
+        .visualization-card {
+            flex: 0 1 calc(50% - 5px); /* Each card takes 50% width with some spacing */
+            margin: 10px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            overflow: hidden; /* Hide overflow content */
+        }
+
+        .visualization-card:hover {
+            transform: scale(1.05);
+        }
+
+        .visualization-card p {
+            margin: 0;
+            font-size: 20px; /* Adjust the font size to make text smaller */
+        }
+
+        /* Colors for each card */
+        #donut-chart { background-color: #ffb347; }
+        #word-cloud { background-color: #77dd77; }
+        #speaker-contribution { background-color: #6c5ce7; }
+        #network-graph { background-color: #ff6961; }
+
+        /* Adjustments for the graph size */
+        #donut-chart svg,
+        #word-cloud img,
+        #speaker-contribution svg,
+        #network-graph svg {
+            max-width: 110%; /* Make sure the graph fits within the card */
+            height: auto; /* Maintain the aspect ratio */
+        }
+    </style>
+</head>
+<body>
+    <h1>Data Analysis Dashboard</h1>
+
+    <div class="dashboard-container">
+        <div class="visualization-card" id="donut-chart">
+            <!-- Donut Chart visualization code goes here -->
+            <p>Sentiment Analysis Visualization</p>
+        </div>
+        <div class="visualization-card" id="word-cloud">
+            <!-- Word Cloud visualization code goes here -->
+            <p>Word Cloud Visualization</p>
+        </div>
+        <div class="visualization-card" id="speaker-contribution">
+            <!-- Speaker Contribution visualization code goes here -->
+            <p>Speaker Contribution Visualization</p>
+        </div>
+        <div class="visualization-card" id="network-graph">
+            <!-- Network Graph visualization code goes here -->
+            <p>Network Graph Visualization</p>
+        </div>
+    </div>
+
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="https://cdn.rawgit.com/jasondavies/d3-cloud/v1.2.5/build/d3.layout.cloud.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Analysis Visualization</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5; /* Light gray background */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        #button-container {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #3498db; /* Blue color */
+            color: #fff;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #2980b9; /* Darker blue on hover */
+        }
+
+        .visualization-card {
+            display: none;
+            width: 300px;
+            margin: 10px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .visualization-card.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Data Analysis Visualization</h1>
+
+    <div id="button-container">
+        <a href="sentiment_analysis.html"><button>Sentiment Analysis</button></a>
+        <a href="word_cloud.html"><button>Word Cloud</button></a>
+        <a href="speaker_contribution.html"><button>Speaker Contribution</button></a>
+        <a href="partition.html"><button>Create Icicle</button></a>
+        <a href="dashboard.html"><button>Dashboard</button></a>
+    </div>
+
+    <div id="dashboard">
+        <div class="visualization-card" id="donut-chart">
+            <p>Sentiment Analysis Visualization </p>
+        </div>
+        <div class="visualization-card" id="word-cloud">
+            <p>Word Cloud Visualization </p>
+        </div>
+        <div class="visualization-card" id="speaker-contribution">
+            <p>Speaker Contribution Visualization </p>
+        </div>
+        <div class="visualization-card" id="network-graph">
+            <p>Network Graph Visualization</p>
+        </div>
+    </div>
+
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="https://cdn.rawgit.com/jasondavies/d3-cloud/v1.2.5/build/d3.layout.cloud.js"></script>
+    <script src="app.js"></script>
+    <script>
+        
+    </script>
+</body>
+</html>
